@@ -1,0 +1,21 @@
+﻿<Window x:Class="MVVM_Learn.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVM_Learn"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+            <TextBox x:Name="firstName" VerticalAlignment="Top" BorderBrush="Black"
+                     Text="{Binding ButtonName}"
+                     BorderThickness="1"
+                     />
+            <TextBox x:Name="lastName" VerticalAlignment="Center" BorderBrush="Black"
+                     BorderThickness="1"
+                     Text="{Binding Path=Text, ElementName=firstName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                     />
+            <Button  x:Name="button" VerticalAlignment="Bottom" Content="{Binding ButtonName}"/>
+
+    </Grid>
+</Window>
