@@ -54,7 +54,7 @@ namespace Program {
             adapter.Fill(nhanVienTable);
 
             ShowDataTable(nhanVienTable);
-
+            Console.WriteLine(nhanVienTable.DefaultView);
             /**/
             // DataRow newRow = nhanVienTable.Rows.Add();
             // newRow["Ho"] = "Nguyet";
