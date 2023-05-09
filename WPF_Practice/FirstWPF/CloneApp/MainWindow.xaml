@@ -4,12 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CloneApp"
+        xmlns:mainVM="clr-namespace:CloneApp.ViewModels"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="920"
         Background="Transparent"
         AllowsTransparency="True"
         ResizeMode="NoResize"
         WindowStyle="None">
+    <Window.DataContext>
+        <mainVM:MainViewModel />
+    </Window.DataContext>
+    
+    
     <Border BorderThickness="2"
             CornerRadius="10">
         <Border.BorderBrush>
@@ -49,31 +56,40 @@
 
                     <!--MenuButton-->
                     <RadioButton Style="{StaticResource menuButton}"
-                                     Tag="{StaticResource color1}">
+                                     Tag="{StaticResource color1}" Checked="RadioButton_Checked"
+                                 Command="{Binding ShowHomeView}"
+                                 IsChecked="True">
                         <StackPanel Orientation="Horizontal">
+                            <fa:IconBlock Icon="Home" Style="{StaticResource menuIcon}"/>
                             <TextBlock Style="{StaticResource menuButtonText}" Text="Home"/>
                         </StackPanel>
                     </RadioButton>
 
                     <RadioButton Style="{StaticResource menuButton}"
-                                     Tag="{StaticResource color2}">
+                                     Tag="{StaticResource color2}"
+                                 Command="{Binding ShowDashboardView}">
                         <StackPanel Orientation="Horizontal">
+                            <fa:IconBlock Icon="Chartline" Style="{StaticResource menuIcon}"/>
                             <TextBlock Style="{StaticResource menuButtonText}" 
                                            Text="Dashboard"/>
                         </StackPanel>
                     </RadioButton>
 
                     <RadioButton Style="{StaticResource menuButton}"
-                                     Tag="{StaticResource color3}">
+                                     Tag="{StaticResource color3}"
+                                 Command="{Binding ShowStoryView}">
                         <StackPanel Orientation="Horizontal">
+                            <fa:IconBlock Icon="Pen" Style="{StaticResource menuIcon}"/>
                             <TextBlock Style="{StaticResource menuButtonText}" 
                                            Text="Story"/>
                         </StackPanel>
                     </RadioButton>
 
                     <RadioButton Style="{StaticResource menuButton}"
-                                     Tag="{StaticResource color4}">
+                                     Tag="{StaticResource color4}"
+                                 Command="{Binding ShowAPIView}">
                         <StackPanel Orientation="Horizontal">
+                            <fa:IconBlock Icon="Book" Style="{StaticResource menuIcon}"/>
                             <TextBlock Style="{StaticResource menuButtonText}" 
                                            Text="API"/>
                         </StackPanel>
@@ -82,19 +98,22 @@
                     <RadioButton Style="{StaticResource menuButton}"
                                      Tag="{StaticResource color5}">
                         <StackPanel Orientation="Horizontal">
+                            <fa:IconBlock Icon="Envelope" Style="{StaticResource menuIcon}"/>
                             <TextBlock Style="{StaticResource menuButtonText}" 
                                            Text="Contact"/>
                         </StackPanel>
                     </RadioButton>
 
                     <RadioButton Style="{StaticResource menuButton}"
-                                     Tag="{StaticResource color6}">
+                                     Tag="{StaticResource color6}"
+                                 >
                         <StackPanel Orientation="Horizontal">
+                            <fa:IconBlock Icon="Phone" Style="{StaticResource menuIcon}"/>
                             <TextBlock Style="{StaticResource menuButtonText}" 
                                            Text="About"/>
                         </StackPanel>
                     </RadioButton>
-
+                
                 </StackPanel>
 
 
@@ -141,7 +160,10 @@
                     <StackPanel HorizontalAlignment="Left"
                                 Orientation="Horizontal"
                                 Grid.Column="0">
-                        <TextBlock Text="Dashboard" Style="{StaticResource headerText}"/>
+                        <fa:IconBlock Icon="{Binding Icon}" 
+                                      Style="{StaticResource headerIcon}" 
+                                      Tag="{StaticResource color2}"/>
+                        <TextBlock Text="{Binding Title}" Style="{StaticResource headerText}"/>
                     </StackPanel>
                     
                     <!--User Info-->
@@ -149,10 +171,17 @@
                                 Orientation="Horizontal"
                                 FlowDirection="RightToLeft"
                                 Grid.Column="1">
-                        <TextBlock Text="Username" Style="{StaticResource userInfo}"/>
+                        <TextBlock Text="{Binding _User.Username}" Style="{StaticResource userInfo}"/>
                     </StackPanel>
+                    
+                    
+                    
                 </Grid>
-                
+
+                <!--Content-->
+                <StackPanel Grid.Row="2">
+                    <ContentControl />
+                </StackPanel>
             </Grid>
             
         </Grid>
