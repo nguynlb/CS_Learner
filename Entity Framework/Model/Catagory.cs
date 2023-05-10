@@ -16,6 +16,10 @@ namespace ef.Model {
         [StringLength(20)]
         public string Description {get; set;}
 
+        public virtual List<Product> Products {get; set;}
+
+        public virtual CatagoryDetail CategoryDetail {get; set;}
+
         public override string ToString() => $"{Id, 4} - {Name, 10} - {Description , 20}";
     }
  }

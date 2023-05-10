@@ -97,9 +97,9 @@ namespace ef {
         // }
 
         public static async Task Main() {
-            // await DropDatabase();
-            // await createDatabase();
-            await InsertCatagory();
+            await DropDatabase();
+            await createDatabase();
+            // await InsertCatagory();
         }
     }
 }
