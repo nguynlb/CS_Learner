@@ -5,20 +5,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace NavigationDI.MVVM.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-		public INavigationService navigationService { get; set; }
+		private INavigationService _navigation;
 
-		public MainViewModel()
+		public INavigationService Navigation
 		{
-			
+			get
+			{
+				return _navigation;
+			}
+			set
+			{
+                _navigation = value;
+				OnPropertyChanged(nameof(Navigation));
+			}
 		}
 
-		
+		public ICommand NavigationHomeView { get; private set; }
+		public ICommand NavigationSettingView { get; private set; }
 
+        public MainViewModel(INavigationService navigation)
+		{
+			Navigation = navigation;
+
+			NavigationHomeView = new RelayCommand(o => Navigation.NavigationTo<HomeViewModel>());
+            NavigationSettingView = new RelayCommand(o => Navigation.NavigationTo<SettingViewModel>());
+        }
 
 	}
 }

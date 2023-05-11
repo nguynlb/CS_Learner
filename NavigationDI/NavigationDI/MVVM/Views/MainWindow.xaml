@@ -13,9 +13,13 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0">
-            <Button Content="Home"/>
-            <Button Content="Setting"/>
-
+            <Button Content="Home"
+                    Command="{Binding NavigationHomeView}"/>
+            <Button Content="Setting"
+                    Command="{Binding NavigationSettingView}"/>
         </StackPanel>
+        <ContentControl Grid.Row="1"
+                        Content="{Binding Navigation.CurrentView}"/>
+
     </Grid>
 </Window>

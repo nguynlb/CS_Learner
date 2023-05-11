@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NavigationDI.Core
 {
-    public class ViewModelBase : ObservationObject, INotifyPropertyChanged
+    public class ViewModelBase : ObservationObject
     {
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using NavigationDI.Core;
 using NavigationDI.MVVM.ViewModels;
+using NavigationDI.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +11,6 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Navigation;
 
 namespace NavigationDI
 {
@@ -35,7 +35,7 @@ namespace NavigationDI
             services.AddSingleton<HomeViewModel>();
             services.AddSingleton<SettingViewModel>();
             services.AddSingleton<Func<Type, ViewModelBase>>((provider) => viewModelType => (ViewModelBase)provider.GetRequiredService(viewModelType));
-            services.AddSingleton<NavigationService>();
+            services.AddSingleton<INavigationService, NavigationService>();
 
             _provider = services.BuildServiceProvider();
         }
