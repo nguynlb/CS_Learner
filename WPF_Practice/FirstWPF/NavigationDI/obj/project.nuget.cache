@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "JE4akGdf0VnQrs+3eoHjmghIn/BZt2Q0PJ6uK753PRZ8mEz178goAvARdMHsPs8Fit8swgP75vqxpGIqxB4zfg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ADMIN\\OneDrive\\Máy tính\\Project\\.Net\\Github\\WPF_Practice\\FirstWPF\\NavigationDI\\NavigationDI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

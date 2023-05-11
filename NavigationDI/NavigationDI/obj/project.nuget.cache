@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "BTGfpDRIS6rVvEYV7t3L92bE2yNWBFum+Belihy++2FgmUnvWo265IndbBd63lOladYu2w8kWee3IA6MjGkFxg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ADMIN\\OneDrive\\Máy tính\\Project\\.Net\\Github\\NavigationDI\\NavigationDI\\NavigationDI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
